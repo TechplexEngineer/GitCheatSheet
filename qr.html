@@ -21,17 +21,28 @@
 		}
 		td[colspan] {
 			padding-left: 0px;
+			padding-top: 3px;
+		}
+		.right {
+			float:right;
+		}
+		.logo {
+			margin-bottom: -10px;
 		}
 
 	</style>
 </head>
 <body>
-	<h1>Git Quick Reference</h1>
+	<small class="right"> Blake Bourque - 2015</small>
+	<h1>
+	<img class="logo" src="Git-Logo-2Color.png" width="90px">
+	Quick Reference</h1>
 	<hr>
-	<strong>Note:</strong> <em>italiized</em> words are prameters and <em>[italicized]</em> words in square brackets are optional parameters
+	<strong>Note:</strong> <em>italiized</em> words are parameters and <em>[italicized]</em> words in square brackets are optional parameters
+	<br>
 	<table>
 		<colgroup>
-			<col width="325">
+			<col width="310">
 		</colgroup>
 		<tbody>
 
@@ -67,7 +78,7 @@
 					<strong>git config --global user.name</strong> <em>"Your Name"</em>
 				</td>
 				<td>
-					Tell git who you are. Used to set author on commits.
+					and
 				</td>
 			</tr>
 			<tr>
@@ -75,7 +86,7 @@
 					<strong>git config --global user.email</strong> <em>"you@ex.com"</em>
 				</td>
 				<td>
-					Web services (ie. Github) use email to associate commits with accounts.
+					Used to set author on commits
 				</td>
 			</tr>
 
@@ -205,7 +216,7 @@
 					<strong>git add</strong> <em>path</em>
 				</td>
 				<td>
-					Stage file for commit
+					Stage file(s) for commit
 				</td>
 			</tr>
 			<tr>
@@ -221,7 +232,7 @@
 					<strong>git commit</strong>
 				</td>
 				<td>
-					Commit files that have been staged (with git-add)
+					Commit files that have been staged (via git-add)
 				</td>
 			</tr>
 			<tr>
@@ -302,7 +313,9 @@
 					Show file annotated with line modifications
 				</td>
 			</tr>
-
+			<!-- <tr>
+				<td colspan="2"><br><br><br></td>
+			</tr> -->
 			<tr>
 				<td colspan="2">
 					<h4>Remote repositories - <em>remotes</em>:</h4>
@@ -321,7 +334,7 @@
 					<strong>git pull</strong> <em>[remote]</em>
 				</td>
 				<td>
-					Fetch and merge changes from a remote repository
+					Fetch and <strong>merge</strong> changes from a remote repository
 				</td>
 			</tr>
 			<tr>
@@ -334,7 +347,7 @@
 			</tr>
 			<tr>
 				<td>
-					<strong>git remote</strong>
+					<strong>git remote -v</strong>
 				</td>
 				<td>
 					List remote repositories
@@ -342,7 +355,7 @@
 			</tr>
 			<tr>
 				<td>
-					<strong>git remote add</strong> <em>remote</em> <em>url</em>
+					<strong>git remote add</strong> <em>remote_name</em> <em>url</em>
 				</td>
 				<td>
 					Add remote to list of tracked repositories
@@ -381,68 +394,12 @@
 			</tr>
 			<tr>
 				<td>
-					<strong>git branch</strong> -f <em>branch</em> <em>rev</em>
-				</td>
-				<td>
-					Overwrite existing branch, start from revision
-				</td>
-			</tr>
-			<tr>
-				<td>
 					<strong>git merge</strong> <em>branch</em>
 				</td>
 				<td>
-					Merge changes from branch
+					Merge changes from branch into current branch
 				</td>
 			</tr>
-
-
-			<tr>
-				<td colspan="2">
-					<h4>Exporting and importing:</h4>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<strong>git apply</strong> - &lt; <em>file</em>
-				</td>
-				<td>
-					Apply patch from stdin
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<strong>git format-patch</strong> <em>from[..to]</em>
-				</td>
-				<td>
-					Format a patch with log message and diffstat
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<strong>git archive</strong> <em>rev</em> &gt; <em>file</em>
-				</td>
-				<td>
-					Export snapshot of revision to file
-				</td>
-			</tr>
-			<tr>
-				<td class="flag">
-					--prefix=<em>dir</em>/
-				</td>
-				<td>
-					Nest all files in the snapshot in directory
-				</td>
-			</tr>
-			<tr>
-				<td class="flag">
-					--format=<em>[tar|zip]</em>
-				</td>
-				<td>
-					Specify archive format to use: <em>tar</em> or <em>zip</em>
-				</td>
-			</tr>
-
 
 			<tr>
 				<td colspan="2">
@@ -459,14 +416,6 @@
 			</tr>
 			<tr>
 				<td class="flag">
-					-s
-				</td>
-				<td>
-					Sign tag with your private key using GPG
-				</td>
-			</tr>
-			<tr>
-				<td class="flag">
 					-l <em>[pattern]</em>
 				</td>
 				<td>
@@ -475,8 +424,184 @@
 			</tr>
 
 		</tbody>
+	</table>
+	<h2>Visualizing git commands</h2>
+	<img src="flow1.png">
+	<h2>Example Flows</h2>
+	<table>
+		<colgroup>
+			<col width="310">
+		</colgroup>
+		<tbody>
+
+			<tr>
+				<td colspan="2">
+					<h4>Working on an existing repository:</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>git clone</strong> <em>url</em>
+				</td>
+				<td>
+					Download and checkout a remote repository
+				</td>
+			</tr>
+			<tr>
+				<td>
+					&lt;make changes&gt;
+				</td>
+				<td>
+					Fix some bugs or add a feature
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>git add -p</strong> <em>glob</em>
+				</td>
+				<td>
+					Stage file(s) for commit
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>git commit</strong>
+				</td>
+				<td>
+					Create a commit from staged files
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>git push</strong>
+				</td>
+				<td>
+					Send the changes back to original repository
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2">
+					<h4>Creating a new repository:</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					&lt;start work&gt;
+				</td>
+				<td>
+					Make some bugs, or create a feature
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>git init</strong>
+				</td>
+				<td>
+					Create a repository in current directory
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>git add -p</strong> <em>glob</em>
+				</td>
+				<td>
+					Stage file(s) for commit
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>git commit</strong>
+				</td>
+				<td>
+					Create a commit from staged files
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>git remote add</strong> <em>remote_name</em> <em>url</em>
+				</td>
+				<td>
+					Add remote to list of tracked repositories
+				</td>
+			<tr>
+				<td>
+					<strong>git push -u origin master</strong>
+				</td>
+				<td>
+					Send the changes to remote repository
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2">
+					<h4>Helpful Hints:</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					use git-number to save typing
+				</td>
+				<td>
+					<a href="https://github.com/holygeek/git-number">https://github.com/holygeek/git-number</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					create aliases and use them
+				</td>
+				<td>
+					<a href="https://git.io/vCIBR">https://git.io/vCIBR</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					use ssh keys with passphrases
+				</td>
+				<td>
+					<a href="https://help.github.com/articles/generating-ssh-keys/">https://help.github.com/articles/generating-ssh-keys/</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					checkout tldr-manpages
+				</td>
+				<td>
+					<a href="https://github.com/tldr-pages/tldr">https://github.com/tldr-pages/tldr</a>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					ignore binary and compiled files
+				</td>
+				<td>
+					add them to a .gitignore file <a href="https://git-scm.com/docs/gitignore">https://git-scm.com/docs/gitignore</a>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					use cygwin on windows
+				</td>
+				<td>
+					get a linux terminal in windows <a href="https://cygwin.com/">https://cygwin.com/</a>
+				</td>
+			</tr>
+
+			<!--
+			<tr>
+				<td>
+					
+				</td>
+				<td>
+					
+				</td>
+			</tr>
+			-->
 
 
+		</tbody>
 	</table>
 </body>
 </html>
