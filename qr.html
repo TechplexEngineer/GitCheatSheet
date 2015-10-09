@@ -56,7 +56,6 @@
 					<strong>git help</strong> <em>command</em>
 				</td>
 				<td>
-					or
 				</td>
 			</tr>
 			<tr>
@@ -64,13 +63,12 @@
 					<strong>git</strong> <em>command</em> --help
 				</td>
 				<td>
-					Show help for a command
 				</td>
 			</tr>
 
 			<tr>
 				<td colspan="2">
-					<h4>Git Setup:</h4>
+					<h4>Git Setup - Used to set author on commits</h4>
 				</td>
 			</tr>
 			<tr>
@@ -78,7 +76,6 @@
 					<strong>git config --global user.name</strong> <em>"Your Name"</em>
 				</td>
 				<td>
-					and
 				</td>
 			</tr>
 			<tr>
@@ -86,7 +83,7 @@
 					<strong>git config --global user.email</strong> <em>"you@ex.com"</em>
 				</td>
 				<td>
-					Used to set author on commits
+					
 				</td>
 			</tr>
 
@@ -426,7 +423,9 @@
 		</tbody>
 	</table>
 	<h2>Visualizing git commands</h2>
-	<img src="flow.png">
+	<div style="height:640px">
+		<img src="flow.png">
+	</div>
 	<h2>Example Flows</h2>
 	<table>
 		<colgroup>
@@ -436,7 +435,7 @@
 
 			<tr>
 				<td colspan="2">
-					<h4>Working on an existing repository:</h4>
+					<h4>Getting existing repository:</h4>
 				</td>
 			</tr>
 			<tr>
@@ -447,7 +446,7 @@
 					Download and checkout a remote repository
 				</td>
 			</tr>
-			<tr>
+			<!-- <tr>
 				<td>
 					&lt;make changes&gt;
 				</td>
@@ -478,7 +477,7 @@
 				<td>
 					Send the changes back to original repository
 				</td>
-			</tr>
+			</tr> -->
 
 			<tr>
 				<td colspan="2">
@@ -530,6 +529,52 @@
 				</td>
 				<td>
 					Send the changes to remote repository
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2">
+					<h4>Working on a Repo:</h4>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>git pull</strong>
+				</td>
+				<td>
+					Get the latest version with other changes
+				</td>
+			</tr>
+			<tr>
+				<td>
+					&lt;make changes&gt;
+				</td>
+				<td>
+					Make some bugs, or add a feature
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>git add -p</strong> <em>glob</em>
+				</td>
+				<td>
+					Stage file(s) for commit
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>git commit</strong>
+				</td>
+				<td>
+					Create a commit from staged files
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<strong>git push</strong>
+				</td>
+				<td>
+					Send the changes back to original repository
 				</td>
 			</tr>
 
